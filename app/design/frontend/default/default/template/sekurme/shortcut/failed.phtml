@@ -1,0 +1,43 @@
+<style>
+.error-msg-sekur{line-height:20px;color:#ff0000;}
+.payment-name{font-size:16px;}
+</style>
+<script type="text/javascript">
+window.onload=function() {
+function countdown() {
+if ( typeof countdown.counter == 'undefined' ) {
+    countdown.counter = 5; // initial count
+    }
+if(countdown.counter > 0) {
+	document.getElementById('count').innerHTML = countdown.counter--;
+    setTimeout(countdown, 1000);
+    }
+else {
+    location.href = '<?php echo Mage::getUrl("checkout/cart") ?>';
+    }
+}
+countdown();
+};
+</script>
+<?php
+$standard = Mage::getModel('sekurme/express');
+?>
+<h1 class="payment-name"><?php echo $this->__('SEKURME_LABEL_1'); ?></h1>
+
+<div><?php echo $this->__('SEKURME_LABEL_7'); ?>
+<?php 
+if (Mage::registry('payment_error') != "") {
+if ((Mage::registry('payment_error') == "bank") || (Mage::registry('payment_error') == "order_error")) {
+?> 
+<p>
+<?php echo Mage::registry('code'); ?> 
+</p>
+<p class="error-msg-sekur">
+<?php echo Mage::registry('desc'); ?> 
+<?php
+}
+}
+?>
+</p>
+<p><h2>You will be redirected to the shopping cart page in <span id="count"></span> seconds</h2></p>
+</div>

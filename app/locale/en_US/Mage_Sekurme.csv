@@ -1,0 +1,9 @@
+SEKURME_LABEL_1,Express Checkout with SEKUR.me
+SEKURME_LABEL_2,Online payment with available payment methods processed by SEKUR.me
+SEKURME_LABEL_3,The payment was <b>not</b> approved by SEKUR.me.<br><br>The payment was rejected with errorcode: 
+SEKURME_LABEL_4,SEKUR.me payment information
+SEKURME_LABEL_5,Transaction number:
+SEKURME_LABEL_6,Payment date:
+SEKURME_LABEL_7,There is not registered any payment for this order yet!
+SEKURME_LABEL_8,http://www.sekur.me
+SEKURME_LABEL_9,Visit SEKUR.me Website

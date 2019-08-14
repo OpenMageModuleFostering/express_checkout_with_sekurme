@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Express_Checkout_with_sekurme",
+    "type": "magento-module",
+    "license": "GPL",
+    "homepage": "",
+    "description": "1-Click Mobile Web Payments for mobile enabled m-Commerce.",
+    "authors": [
+    {
+        "name": "Sekur.me",
+        "email": "jack@septium.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

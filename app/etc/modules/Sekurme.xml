@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sekurme>
+            <active>true</active>
+            <codePool>community</codePool>
+             <depends>
+                <Mage_Paygate/>
+                <Mage_Checkout/>
+                <Mage_Sales/>
+            </depends>
+        </Sekurme>
+    </modules>
+</config>

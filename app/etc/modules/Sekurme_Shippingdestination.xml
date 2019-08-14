@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Sekurme_Shippingdestination>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Sekurme_Shippingdestination>
+	</modules>
+</config>

@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<config>
+   <sections>
+        <payment translate="label" module="payment">
+            <groups>
+                <sekurme translate="label">
+                    <label><![CDATA[Express Checkout With SEKUR.me]]></label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                         <express_button_checkout translate="label">
+                          <label>Enable</label>
+                          <frontend_type>select</frontend_type>
+                          <source_model>adminhtml/system_config_source_yesno</source_model>
+                          <sort_order>1</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>0</show_in_store>
+                          <comment>
+                          <![CDATA[
+                          Enable Express Checkout with SEKUR.me, the fastest checkout process. Increase your conversions, your repeat sales and your revenues. 
+                          ]]>
+                          </comment>
+                        </express_button_checkout>
+                        <subtitle translate="label">
+                            <label><![CDATA[Sub Title]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </subtitle>
+                        <storeid translate="label">
+                            <label><![CDATA[Store ID]]></label>
+                            <comment><![CDATA[Use SEKUR.me provided Store ID.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </storeid>
+                        <merchantnumber translate="label">
+                            <label><![CDATA[Company ID]]></label>
+                            <comment><![CDATA[Use SEKUR.me provided Company ID.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </merchantnumber>
+            						<md5key translate="label">
+                            <label><![CDATA[SEKUR.me Authorization Key]]></label>
+                            <comment><![CDATA[Use SEKUR.me provided Authorization Key.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </md5key>
+                        <sekurmeurl translate="label">
+                            <label><![CDATA[SEKUR.me Online Url. Here you can insert your test url. Remember to change the url here to the live one when testing is finished. This is provided by SEKUR.me.]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sekurmeurl>
+                        
+                        <paymentmethod translate="label">
+                           <label><![CDATA[Payment Mode]]></label>
+                           <frontend_type>select</frontend_type>
+                           <sort_order>8</sort_order>
+                           <source_model>sekurme/system_config_source_paymentmethod</source_model>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>1</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment><![CDATA[Make sure that the selected payment mode is activated; otherwise, SEKUR.me payment method will work in the unilateral mode.]]></comment>
+                         </paymentmethod>
+                        
+                        <order_status translate="label">
+                            <label><![CDATA[Order Status before payment]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </order_status>
+                       
+                        <order_status_after_payment translate="label">
+                            <label><![CDATA[Order Status after payment]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </order_status_after_payment>
+                        <paymentaction translate="label">
+                            <label><![CDATA[Payment Action]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sekurme/system_config_source_paymentaction</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>2</show_in_default>
+                            <show_in_website>2</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </paymentaction>
+                          
+                    </fields>
+                </sekurme>
+            </groups>
+        </payment>
+    </sections>
+</config>

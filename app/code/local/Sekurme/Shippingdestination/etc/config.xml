@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Sekurme_Shippingdestination>
+			<version>1.3.0</version>
+		</Sekurme_Shippingdestination>
+	</modules>
+	<global>
+	<models>
+		<shippingdestination>
+			<class>Sekurme_Shippingdestination_Model</class>
+		</shippingdestination>
+	</models>
+	    <events>
+		<sales_quote_collect_totals_before>
+		    <observers>
+		        <sekurme_shippingdestination>
+		            <class>shippingdestination/observer</class>
+		            <method>handleCollect</method>
+		        </sekurme_shippingdestination>
+		    </observers>
+		</sales_quote_collect_totals_before>
+	    </events>
+	</global>
+</config>

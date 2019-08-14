@@ -1,0 +1,6 @@
+<layout version="0.1.0">
+    <sekurme_shopping_checkout_cart_index>
+    <update handle="checkout_cart_index"/>
+   </sekurme_shopping_checkout_cart_index>
+</layout>
+

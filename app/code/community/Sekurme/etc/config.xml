@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sekurme>
+            <version>1.0.0.1</version>
+        </Sekurme>
+    </modules>
+    <global>
+        <models>
+            <sekurme>
+                <class>Sekurme_Model</class>
+                <resourceModel>Sekurme_mysql4</resourceModel>
+            </sekurme>
+            <sekurme_mysql4>
+                <class>Sekurme_Model_Mysql4</class>
+                <entities>
+                    <api_debug><table>sekurme_api_debug</table></api_debug>
+                </entities>
+            </sekurme_mysql4>
+            
+        </models>
+        <resources>
+            <sekurme_setup>
+                <setup>
+                    <module>Sekurme</module>
+                    <class>Sekurme_Model_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </sekurme_setup>
+            <sekurme_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </sekurme_write>
+            <sekurme_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </sekurme_read>
+        </resources>
+        
+        <helpers>
+            <sekurme>
+                <class>Sekurme_Helper</class>
+            </sekurme>
+        </helpers>
+        
+        <blocks>
+            <sekurme><class>Sekurme_Block</class></sekurme>                                  
+        </blocks>
+    </global>
+      <frontend>
+                
+             <routers>
+                <sekurme>
+                    <use>standard</use>
+                    <args>
+                        <module>Sekurme</module>
+                        <frontName>sekurme</frontName>
+                    </args>
+                </sekurme>
+            </routers> 
+        
+        
+            <layout>
+
+                <updates>
+                    <sekurme>
+                        <file>sekurme.xml</file>
+                    </sekurme>
+                </updates>
+
+            </layout>
+            
+            <translate>
+            <modules>
+                <sekurme>
+                    <files>
+                        <default>Mage_Sekurme.csv</default>
+                    </files>
+                </sekurme>
+            </modules>
+            </translate>
+            
+          
+    </frontend>
+	<adminhtml>
+        <translate>
+            <modules>
+                <Sekurme>
+                    <files>
+                        <default>Sekurme.csv</default>
+                    </files>
+                </Sekurme>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <sekurme>
+                                            <title>Sekurme Section</title>
+                                        </sekurme>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <default>
+            <sekurme>
+                  <model>Sekurme_Model_Express</model>
+                  <subtitle>Enter sub title</subtitle>
+                  <storeid>Enter Store ID</storeid>
+                  <active>1</active>
+                  <sort_order>1</sort_order>
+                  <merchantnumber>Enter Company ID</merchantnumber>
+                  <sekurmeurl>Enter SEKUR.me Online Url</sekurmeurl>
+                  <express_button_checkout>1</express_button_checkout>
+                  <paymentmethod></paymentmethod>
+                  <paymentaction>1</paymentaction>
+            </sekurme>
+    </default>
+
+</config>

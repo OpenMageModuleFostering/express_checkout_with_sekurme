@@ -1,0 +1,102 @@
+<?php
+//
+// Load the Sekurme online object
+//
+$standard = Mage::getModel('sekurme/express');
+$subtitle = Mage::getStoreConfig('payment/sekurme/subtitle');
+$sekurmeConfigURL = htmlspecialchars(Mage::getStoreConfig('payment/sekurme/sekurmeurl'));
+?>
+<script src="<?php echo $sekurmeConfigURL; ?>Scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+<script src="<?php echo $sekurmeConfigURL; ?>Scripts/SekurMe.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo $sekurmeConfigURL; ?>Styles/SekurMePopup.css" />
+
+<script type="text/javascript">
+
+  // Alert message
+  function validateQuoteForm(){
+  var postcode = document.getElementById("postcode");
+  var region_id = document.getElementById("region_id");
+  /*if(postcode.value == "" )
+   {
+     alert( "Please enter your zip/postal code to complete your order with SEKUR.me Express Checkout." );
+     postcode.style.border = "solid 1px red";
+     region_id.style.border = "solid 1px red";
+     postcode.style.background = "white";
+     postcode.focus();
+  
+     return false;
+   } */
+   return( true );
+    
+  }
+
+</script>
+<?php
+//
+// Initialize the payment
+//
+$Url = $standard->initalize();
+
+$values = explode(" ", strip_tags($Url));
+$errorCode = trim(strip_tags($values["2"]));
+
+ switch ($errorCode) {
+            case 1:
+                $message = "CompanyID Error";
+                break;
+            case 2:
+                $message = "StoreID Error";
+                break;
+            case 4:
+                $message = "Bad Authorization Status";
+                break;
+            case 5:
+                $message = "Store Authorization Error";
+                break;
+            case 6:
+                $message = "SekurAction – Unsupported Action";
+                break;
+            case 7:
+                $message = "Invalid Amount";
+                break;
+            case 8:
+                $message = "Invalid or Empty UserID";
+                break;
+            case 9:
+                $message = "Invalid Transaction ID";
+                break;
+            case 1000:
+                $message = "General Error";
+                break;
+            default:
+                $message = "Unknown error";
+                break; 
+      }
+?>
+
+
+<?php 
+if ($this->getAllowedCart() == 1){
+
+  if($errorCode == 0){
+
+?>
+<div style="vertical-align: top; margin-top: 0px;" class="sekurme-panel">
+        <div id="sekurMeDiv"></div>
+        <script>
+            var tssidValue = '<?php echo trim(strip_tags($values["6"])); ?>';
+            var etxnIdValue = '<?php echo trim(strip_tags($values["8"])); ?>';
+            var qrUrl = '<?php echo trim(strip_tags($values["4"])); ?>';
+            var buttonType = "expresspay";
+            SekurMe.configure("sekurMeDiv", tssidValue, etxnIdValue, qrUrl, buttonType,validateQuoteForm);
+       </script>
+</div>
+<div style="float:left; font-size:12px;padding:5px 0px 5px 0px;"><?php echo $subtitle; ?></div>
+<div>&nbsp;</div>
+
+<?php }else{ ?>
+   <div>SEKUR.me express checkout payment services are currently unavailable! Error message code - "<?php echo $errorCode; ?>"!</div>
+<?php } ?>    
+
+<?php }; ?>
+

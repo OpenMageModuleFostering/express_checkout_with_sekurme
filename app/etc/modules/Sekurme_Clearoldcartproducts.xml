@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Sekurme_Clearoldcartproducts>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Sekurme_Clearoldcartproducts>
+	</modules>
+</config>

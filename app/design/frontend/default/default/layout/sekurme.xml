@@ -1,0 +1,17 @@
+<layout version="0.1.0">
+    <checkout_cart_index>
+        <reference name="checkout.cart.top_methods">
+        <!--<block type="sekurme/general_shortcut" template="sekurme/shortcut/shortcuttop.phtml" before="-" name="sekurme_shortcut_topo" />-->
+        </reference>
+        
+        <reference name="checkout.cart.methods">
+        <block type="sekurme/general_shortcut" template="sekurme/shortcut/shortcutmid.phtml" before="-" name="sekurme_shortcut_base" />
+        </reference>
+        
+        <reference name="checkout.cart.shipping">
+         <block type="checkout/cart_shipping" name="checkout.cart.shipping" as="shipping" template="checkout/cart/shipping.phtml"/>
+        </reference>
+              
+    </checkout_cart_index>
+</layout>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sekurme_Shopping>
+            <version>0.1.0</version>
+        </Sekurme_Shopping>
+    </modules>
+    <global>
+        <rewrite>
+            <sekurme_shopping_checkout_cart>
+                <from><![CDATA[#^/checkout/cart/#]]></from>
+                <to>/shopping/checkout_cart/</to>
+            </sekurme_shopping_checkout_cart>
+        </rewrite>
+    </global>
+    <frontend>
+        <routers>
+            <sekurme_shopping>
+                <use>standard</use>
+                <args>
+                    <module>Sekurme_Shopping</module>
+                    <frontName>shopping</frontName>
+                </args>
+            </sekurme_shopping>
+        </routers>
+    </frontend>
+</config>

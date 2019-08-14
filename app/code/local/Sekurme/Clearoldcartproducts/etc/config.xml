@@ -1,0 +1,22 @@
+<?xml version = "1.0" ?>
+<config>
+	<modules>
+		<Sekurme_Clearoldcartproducts>
+			<version>1.0.0</version>
+		</Sekurme_Clearoldcartproducts>
+	</modules>
+	<global>
+		<events>
+			<sales_quote_merge_before>
+				<observers>
+					<sekurme_clearoldcartproducts_observer>
+						<type>singleton</type>
+						<class>Sekurme_Clearoldcartproducts_Model_Observer</class>
+						<method>loadCustomerQuote</method>
+					</sekurme_clearoldcartproducts_observer>
+				</observers>
+			</sales_quote_merge_before>
+		</events>
+	</global>
+</config>
+
